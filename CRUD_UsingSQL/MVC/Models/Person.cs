@@ -14,6 +14,12 @@ namespace MVC.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
+    public enum Gender
+    {
+        Nam,
+        Nữ,
+        Khác
+    }
     public partial class Person
     {
         public int Id { get; set; }

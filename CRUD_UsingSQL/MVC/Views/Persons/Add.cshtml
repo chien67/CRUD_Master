@@ -49,8 +49,6 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })*@
                 <input type="file" name="imageFile" id="imageFile">
                 <img id="previewImage" src="#" alt="Preview Image" style="display: none; max-width: 300px; max-height: 300px;">
             </div>
@@ -68,8 +66,7 @@
             @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Gender)
-                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(MVC.Models.Gender))), "Chọn giới tính", new { @class = "form-control" })
                 </div>
             </div>
         </div>
