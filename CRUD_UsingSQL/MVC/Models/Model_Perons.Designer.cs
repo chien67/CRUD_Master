@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Project\CRUD_UsingSQL\MVC\Models\Model_Perons.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Project\CRUD_Master\CRUD_UsingSQL\MVC\Models\Model_Perons.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

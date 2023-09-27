@@ -78,7 +78,7 @@ namespace MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(person);
+            return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {

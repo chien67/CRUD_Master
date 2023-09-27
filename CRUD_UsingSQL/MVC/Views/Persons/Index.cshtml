@@ -57,7 +57,15 @@
             @person.DoB
         </td>
         <td>
-            @person.Gender
+            @*@person.Gender*@
+            @if (person.Gender)
+            {
+                <p>Nam</p>
+            }
+            else
+            {
+                <p>Nữ</p>
+            }
         </td>
         <td>
             @Html.ActionLink("Thay đổi", "Edit", new { id = person.Id }, new { @class = "btn btn-primary", @style = "color:white" }) |
