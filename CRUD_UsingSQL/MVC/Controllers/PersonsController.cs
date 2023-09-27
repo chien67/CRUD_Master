@@ -68,7 +68,7 @@ namespace MVC.Controllers
                     // Đọc dữ liệu từ tệp hình ảnh mới và cập nhật dữ liệu hình ảnh của Person
                     byte[] newImageData = new byte[newImageFile.ContentLength];
                     newImageFile.InputStream.Read(newImageData, 0, newImageFile.ContentLength);
-                    person.Avatar = newImageData;
+                    //person.Avatar = newImageData;
                 }
 
                 // Cập nhật thông tin khác của Person
@@ -90,18 +90,20 @@ namespace MVC.Controllers
 
         public ActionResult Details(int id)
         {
-            //if(id <= 0)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
             Person person = db.Persons.Find(id);
+            // Lấy dữ liệu hình ảnh từ đối tượng mô hình (assumption: model.ImageData là mảng byte)
+            byte[] imageData = person.Avatar;
+            // Trả về view và chuyển dữ liệu hình ảnh qua ViewBag hoặc ViewModel
+            ViewBag.ImageData = imageData;
+
+            ViewBag.Gender = person.Gender; // model.Gender là kiểu bool
+
             if (person == null)
             {
                 return HttpNotFound();
             }
             return View("Details", person);
         }
-
 
     }
 }

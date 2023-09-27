@@ -24,9 +24,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Salary)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Avatar)
-        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.DoB)
         </th>
@@ -50,9 +47,7 @@
         <td>
             @person.Salary
         </td>
-        @*<td>
-            @person.Avatar
-        </td>*@
+
         <td>
             @person.DoB
         </td>
@@ -67,6 +62,7 @@
                 <p>Nữ</p>
             }
         </td>
+
         <td>
             @Html.ActionLink("Thay đổi", "Edit", new { id = person.Id }, new { @class = "btn btn-primary", @style = "color:white" }) |
             @Html.ActionLink("Chi tiết", "Details", new { id = person.Id }, new { @class = "btn btn-success", @style = "color:white" }) |
