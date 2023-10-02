@@ -49,13 +49,6 @@ namespace MVC.Controllers
         {
             // Lấy thông tin Person từ cơ sở dữ liệu
             var person = db.Persons.Find(id);
-
-            // Kiểm tra nếu có dữ liệu hình ảnh trong cơ sở dữ liệu
-            if (person != null)
-            {
-                // Truyền dữ liệu hình ảnh đến trang chỉnh sửa
-                ViewBag.ImageData = person.Avatar;
-            }
             return View("Edit", person);
         }
         [HttpPost]
