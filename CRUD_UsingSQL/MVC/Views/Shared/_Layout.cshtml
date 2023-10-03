@@ -1,25 +1,38 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CRUD</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    @Styles.Render("~/Bundles/css")
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="@Url.Action("Index","Persons")">Trang chủ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-    </nav>
-    <div>
-        @RenderBody()
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        @Html.Partial("_Header")
+        @Html.Partial("_Sidebar")
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                    <small>@ViewBag.Description</small>
+                </h1>
+            </section>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+        @Html.Partial("_ControlSidebar")
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*@Scripts.Render("~/Bundles/js")
+        @RenderSection("ViewSpecificJavascript", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+    @Scripts.Render("~/Bundles/js")
 </body>
 </html>
